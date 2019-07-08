@@ -2,28 +2,34 @@ package edu.knoldus
 
 class Sorting {
 
-  /*def insertionSort(list: List[Int]): List[Int] = {
-
-
-  }
-
-  def selectionSort(list: List[Int]): List[Int] = {
-    for (i <- 0 until list.length) {
-      var minPos = i
-
-      for (j <- i + 1 until list.length)
-        if (list(j) < list(minPos))
-          minPos = j
-
-      if (minPos != i) {
-        val temp = list(i)
-        list(i) = list(minPos)
-        list(minPos) = list(i)
-      }
+ 
+  def insertionSort(list: List[Int]): List[Int] = {
+    def insert(x: Int, xs: List[Int]): List[Int] = xs match {
+      case List() => List(x)
+      case y :: ys => if (x <= y) x :: xs else y :: insert(x, ys)
     }
 
-    list
-  }*/
+    list match {
+      case List() => List()
+      case y :: ys => insert(y, insertionSort(ys))
+    }
+  }
+
+  def selectionSort(xs: List[Int]): List[Int] =
+    if(xs.isEmpty) List()
+    else {
+      val ys = minimum(xs)
+      if(ys.tail.isEmpty)
+        ys
+      else
+        ys.head :: selectionSort(ys.tail)
+    }
+  def minimum(xs: List[Int]): List[Int] =
+    (List(xs.head) /: xs.tail) {
+      (ys, x) =>
+        if(x < ys.head) (x :: ys)
+        else            (ys.head :: x :: ys.tail)
+    }
 
   def bubbleSort(list: List[Int]): List[Int] = {
 
