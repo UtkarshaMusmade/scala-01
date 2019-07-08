@@ -31,7 +31,7 @@ class SortingTest extends WordSpec {
 
   }
 
-  "Selection Sort" should {
+  /*"Selection Sort" should {
 
     "sort sorted list" in {
       assert(sorting.selectionSort(sortedList) == sortedList.sortBy(identity))
@@ -49,7 +49,7 @@ class SortingTest extends WordSpec {
       assert(sorting.selectionSort(listWithNegativeIntegers) == listWithNegativeIntegers.sortBy(identity))
     }
 
-  }
+  }*/
 
   "Bubble Sort" should {
 
