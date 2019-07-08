@@ -11,7 +11,7 @@ class SortingTest extends WordSpec {
   val reversedList: List[Int] = List(5, 4, 3, 2, 1)
   val listWithNegativeIntegers: List[Int] = List(1, -1, 2, -2)
 
- /* "Insertion Sort" should {
+  "Insertion Sort" should {
 
     "sort sorted list" in {
       assert(sorting.insertionSort(sortedList) == sortedList.sortBy(identity))
@@ -49,7 +49,7 @@ class SortingTest extends WordSpec {
       assert(sorting.selectionSort(listWithNegativeIntegers) == listWithNegativeIntegers.sortBy(identity))
     }
 
-  }*/
+  }
 
   "Bubble Sort" should {
 
